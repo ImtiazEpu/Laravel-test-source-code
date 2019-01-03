@@ -75,7 +75,7 @@ class CategoryController extends Controller {
 			'Youtube' => 'https://youtube.com',
 			'LinkedIn' => 'https://linkedin.com',
 		];
-		$data['category'] = Category::select('id', 'name', 'slug', 'status', 'created_at')->find($id);
+		$data['category'] = Category::with('posts', 'posts.user')->select('id', 'name', 'slug', 'status', 'created_at')->find($id);
 
 		return view('Backend.category.show', $data);
 	}

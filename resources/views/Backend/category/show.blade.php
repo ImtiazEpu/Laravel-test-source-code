@@ -15,6 +15,35 @@
     <p>
          Created at: {{$category->created_at}}
     </p>
+    <h3>
+        Post under {{$category->name}}
+    </h3>
+    <table class="table table-striped">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Post Title</th>
+              <th scope="col">Category</th>
+              <th scope="col">Author</th>
+              <th scope="col">Status</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+              @foreach ($category->posts as $post)
+                  <tr>
+                    <th scope="row">{{$post->id}}</th>
+                    <td>{{$post->title}}</td>
+                    <td>{{$category->name}}</td>
+                    <td>{{$post->user->username}}</td>
+                    <td>{{$post->status == 1? 'Active' : 'Inactive'}}</td>
+                    <td>
+                        <a href="{{ route('posts.show', $post->id) }}" class="btn btn-info">Details</a>
+                    </td>
+                </tr>
+              @endforeach
+          </tbody>
+    </table>
     <div>
          <a href="{{ route('categories.edit', $category->id) }}" class="btn btn-info btn-block">Edit</a>
     </div>

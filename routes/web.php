@@ -35,6 +35,10 @@ Route::get('/categories/{id}/edit', 'Backend\CategoryController@edit')->name('ca
 Route::put('/categories/{id}', 'Backend\CategoryController@update')->name('categories.update');
 Route::delete('/categories/{id}', 'Backend\CategoryController@delete')->name('categories.delete');
 
+//Post
+
+Route::resource('/posts', 'Backend\PostController');
+
 // Route::name('backend.')->namespace('Backend')->prefix('backend')->group(function () {
 // 	Route::get('/', 'FrontController@index')->name('index');
 // 	Route::get('/users', 'UsersController@index')->name('users.index');

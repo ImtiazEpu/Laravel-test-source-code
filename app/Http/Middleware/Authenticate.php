@@ -15,7 +15,7 @@ class Authenticate extends Middleware {
 		if (!$request->expectsJson()) {
 			session()->flash('type', 'danger');
 			session()->flash('message', 'You must be logged in to viwe this page.');
-			return route('frontend.login');
+			return route('login');
 		}
 	}
 }

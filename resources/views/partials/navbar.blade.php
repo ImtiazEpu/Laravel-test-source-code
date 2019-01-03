@@ -14,7 +14,7 @@
                 <a class="btn btn-sm btn-outline-success" href="{{ route('login') }}">Sign in</a>
                 <a class="btn btn-sm btn-outline-success" href="{{route('register')}}">Sign up</a>
               @else
-                <a class="btn btn-sm btn-outline-warning" href="{{ route('logout') }}">Logout</a>
+                <a class="btn btn-sm btn-warning" href="{{ route('logout') }}">Signout</a>
               @endif
           </div>
       </div>

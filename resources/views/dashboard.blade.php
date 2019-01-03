@@ -9,9 +9,10 @@
         <p>
             <a href="{{ route('categories.index') }}" class="btn btn-info btn-block btn-lg">Category</a>
         </p>
-        {{-- <p>
+
+        <p>
             <a href="{{ route('posts.index') }}" class="btn btn-info btn-block btn-lg">Post</a>
-        </p> --}}
+        </p>
 
         {{-- @if($user->id === 51)
             <div class="well">
