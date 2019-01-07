@@ -2,8 +2,8 @@
 
 @section('content')
 	<div class="well">
-    	<h2>Add Category</h2>
-    <form action="{{ route('categories.store') }}" method="post">
+    	<h2>Add Post</h2>
+    <form action="{{ route('posts.store') }}" method="post">
         @csrf
 
         @if ($errors->any())
@@ -27,24 +27,36 @@
         @endif
 
         <div class="form-group">
-            <label for="name">Category name</label>
-            <input type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="Enter category name">
+            <label for="">Post Title</label>
+            <input type="text" class="form-control" name="title" placeholder="Enter Post Title">
+        </div>
+        <div class="form-group">
+            <label for="">Post Content</label>
+            <textarea class="form-control" name="content"></textarea>
         </div>
 
         <div class="form-group">
-            <label for="status">Status</label>
-            <select name="status" class="form-control">
-            	<option value="1">Active</option>
-            	<option value="0">Inactive</option>
-            	option
+            <label for="status">Category</label>
+            <select name="category_id" class="form-control">
+                @foreach($categories as $category)
+                <option value="{{$category->id}}">{{$category->name}}</option>
+                    @endforeach
             </select>
         </div>
 
-        <button type="submit" class="btn btn-primary btn-block">Add Category</button>
+        <div class="form-group">
+            <label for="">Status</label>
+            <select name="status" class="form-control">
+            	<option value="1">Active</option>
+            	<option value="0">Inactive</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Add Post</button>
     </form>
     <hr>
     <p>
-    	<a href="{{ route('categories.index') }}" class="btn btn-primary btn-block">Back to Category List</a>
+    	<a href="{{ route('posts.index') }}" class="btn btn-primary btn-block">Back to Posts List</a>
     </p>
 	</div>
 @endsection

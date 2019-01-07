@@ -10,7 +10,7 @@
             </div>
         @endif
       <p>
-          <a href="{{ route('posts.create') }}" class="btn btn-success">Add Category</a>
+          <a href="{{ route('posts.create') }}" class="btn btn-success">Add Post</a>
       </p>
     	<table class="table table-striped">
           <thead class="thead-dark">

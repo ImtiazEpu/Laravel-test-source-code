@@ -17,7 +17,9 @@
 
     <div class="container">
         @include('partials.navbar')
-        @includeWhen(request()->is('/'), 'partials.jumbotron')
+
+        {{-- @includeWhen(request()->is('/'), 'partials.jumbotron') --}}
+
          <main role="main" class="container">
              <div class="row">
                   <div class="col-md-8 blog-main">
