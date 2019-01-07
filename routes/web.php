@@ -15,17 +15,21 @@ Route::get('/', 'Backend\FrontController@index')->name('index');
 
 Route::group(['middleware' => 'auth'], function () {
 	Route::get('/dashboard', 'Backend\FrontController@showDashboard')->name('dashboard');
-	Route::get('/logout', 'Backend\FrontController@logout')->name('logout');
 });
 
 Route::get('/register', 'Backend\FrontController@showRegistrationForm')->name('register');
 Route::post('/register', 'Backend\FrontController@procssRegistration');
+
+Route::get('/verify/{token}', 'Backend\FrontController@verifyEmail')->name('verify');
 
 Route::get('/login', 'Backend\FrontController@showLoginForm')->name('login');
 Route::post('/login', 'Backend\FrontController@procssLogin');
 
 Route::get('/post', 'Backend\FrontController@post')->name('post');
 
+Route::get('/logout', 'Backend\FrontController@logout')->name('logout');
+
+Route::get('/signupmsg', 'Backend\FrontController@signupmsg')->name('signupmsg');
 //Categories
 Route::get('/categories', 'Backend\CategoryController@index')->name('categories.index');
 Route::get('/categories/add', 'Backend\CategoryController@create')->name('categories.create');
