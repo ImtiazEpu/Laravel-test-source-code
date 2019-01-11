@@ -30,6 +30,11 @@
 			<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
 		</div>
 
+        <div class="form-group">
+            <label for="exampleInputPhone1">Phone number</label>
+            <input type="text" class="form-control" name="phone_number" value="{{old('phone_number')}}" placeholder="Enter phone">
+        </div>
+
 		<div class="form-group">
 			<label for="exampleInputUsername">Username</label>
 			<input type="text" class="form-control" name="username" value="{{old('username')}}" placeholder="Enter username">
