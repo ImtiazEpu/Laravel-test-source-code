@@ -24,6 +24,7 @@ class User extends Authenticatable {
         'email_verified_at',
         'email_verification_token',
         'remember_token',
+        'last_login',
 	];
 
 	/**
